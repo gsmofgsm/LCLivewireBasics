@@ -9,7 +9,8 @@
                           clip-rule="evenodd" />
                 </svg>
             </div>
-            <input id="search"
+            <input wire:model.debounce.300ms="search"
+                   id="search"
                    class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:border-blue-300 focus:shadow-outline-blue sm:text-sm transition duration-150 ease-in-out"
                    placeholder="Search for songs..." type="search" autocomplete="off">
             @if (strlen($search) > 2)
