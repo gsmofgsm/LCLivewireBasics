@@ -37,7 +37,7 @@ class ContactForm extends Component
 
         sleep(1);
 
-        Mail::to('qing@qing.coom')->send(new ContactFormMailable($contact));
+        Mail::to('qing@qing.com')->send(new ContactFormMailable($contact));
 
         $this->resetForm();
         $this->successMessage = 'We received your message successfully and will get back to you shortly!';
