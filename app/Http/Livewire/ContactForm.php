@@ -35,6 +35,8 @@ class ContactForm extends Component
         $contact['phone'] = $this->phone;
         $contact['message'] = $this->message;
 
+        sleep(1);
+
         Mail::to('qing@qing.coom')->send(new ContactFormMailable($contact));
 
         $this->resetForm();
