@@ -1,6 +1,7 @@
 <?php
 
 use App\Mail\ContactFormMailable;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -21,8 +22,8 @@ Route::get('/', function () {
 });
 
 Route::get('/examples', function () {
-    $search = '';
-    return view('examples', compact('search'));
+    $users = User::paginate(10);
+    return view('examples', compact('users'));
 });
 
 Route::post('/contact', function (Request $request) {
