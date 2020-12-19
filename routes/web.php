@@ -21,7 +21,8 @@ Route::get('/', function () {
 });
 
 Route::get('/examples', function () {
-    return view('examples');
+    $search = '';
+    return view('examples', compact('search'));
 });
 
 Route::post('/contact', function (Request $request) {
