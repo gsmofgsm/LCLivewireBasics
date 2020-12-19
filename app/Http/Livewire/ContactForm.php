@@ -12,6 +12,7 @@ class ContactForm extends Component
     public $email;
     public $phone;
     public $message;
+    public $successMessage;
 
     public function submitForm()
     {
@@ -30,7 +31,7 @@ class ContactForm extends Component
         Mail::to('qing@qing.coom')->send(new ContactFormMailable($contact));
 
         $this->resetForm();
-        session()->flash('success_message', 'We received your message successfully and will get back to you shortly!');
+        $this->successMessage = 'We received your message successfully and will get back to you shortly!';
 //        return back()->with('success_message', 'We received your message successfully and will get back to you shortly!');
     }
 
