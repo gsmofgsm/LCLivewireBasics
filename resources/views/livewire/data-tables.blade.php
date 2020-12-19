@@ -35,12 +35,24 @@
                     <thead>
                     <tr>
                         <th
-                            class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Name
+                            class="px-6 py-3 text-left">
+                            <div class="flex items-center">
+                                <button wire:click="sortBy('name')"
+                                    class="bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase
+                                    tracking-wider">Name
+                                </button>
+                                <span>ico</span>
+                            </div>
                         </th>
                         <th
-                            class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Email
+                            class="px-6 py-3 text-left">
+                            <div class="flex items-center">
+                                <button wire:click="sortBy('email')"
+                                        class="bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase
+                                    tracking-wider">Email
+                                </button>
+                                <span>ico</span>
+                            </div>
                         </th>
                         <th
                             class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">

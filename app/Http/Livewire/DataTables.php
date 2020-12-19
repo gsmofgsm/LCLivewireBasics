@@ -12,10 +12,22 @@ class DataTables extends Component
 
     public $active = true;
     public $search;
+    public $sortField;
+    public $sortAsc = true;
 
     public function updatingSearch()
     {
         $this->resetPage();
+    }
+
+    public function sortBy($field)
+    {
+        if ($this->sortField === $field) {
+            $this->sortAsc = ! $this->sortAsc;
+        } else {
+            $this->sortAsc = true;
+        }
+        $this->sortField = $field;
     }
 
     public function render()
@@ -24,9 +36,11 @@ class DataTables extends Component
             'users' => User::where(function ($query) {
                         $query->where('name', 'like', '%' . $this->search . '%')
                             ->orWhere('email', 'like', '%' . $this->search . '%');
-                return $query;
             })
                 ->where('active', $this->active)
+                ->when($this->sortField, function($query) {
+                    $query->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc');
+                })
                 ->paginate(10),
         ]);
     }
