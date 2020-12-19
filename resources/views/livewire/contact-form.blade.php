@@ -58,7 +58,7 @@
                 <form action="/contact" method="POST" class="grid grid-cols-1 row-gap-6">
                     @csrf
 
-                    @if ($successMessage)
+                    @if (session('success_message'))
                         <div class="rounded-md bg-green-50 p-4 mt-8">
                             <div class="flex">
                                 <div class="flex-shrink-0">
@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="ml-3">
                                     <p class="text-sm leading-5 font-medium text-green-800">
-                                        {{ $successMessage }}
+                                        {{ session('success_message') }}
                                     </p>
                                 </div>
                                 <div class="ml-auto pl-3">
