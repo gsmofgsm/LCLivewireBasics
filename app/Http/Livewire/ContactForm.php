@@ -29,11 +29,20 @@ class ContactForm extends Component
 
         Mail::to('qing@qing.coom')->send(new ContactFormMailable($contact));
 
+        $this->resetForm();
 //        return back()->with('success_message', 'We received your message successfully and will get back to you shortly!');
     }
 
     public function render()
     {
         return view('livewire.contact-form');
+    }
+
+    private function resetForm()
+    {
+        $this->name = '';
+        $this->email = '';
+        $this->phone = '';
+        $this->message = '';
     }
 }
