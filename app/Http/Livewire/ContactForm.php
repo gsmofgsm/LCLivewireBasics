@@ -14,14 +14,21 @@ class ContactForm extends Component
     public $message;
     public $successMessage;
 
+    protected $rules = [
+        'name' => 'required',
+        'email' => 'required|email',
+        'phone' => 'required',
+        'message' => 'required|min:5',
+    ];
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
     public function submitForm()
     {
-        $contact = $this->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required',
-            'message' => 'required',
-        ]);
+        $contact = $this->validate();
 
         $contact['name'] = $this->name;
         $contact['email'] = $this->email;
