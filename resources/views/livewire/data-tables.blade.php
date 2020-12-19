@@ -41,17 +41,11 @@
                                     class="bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase
                                     tracking-wider">Name
                                 </button>
-                                @if ($sortField !== 'name')
-                                    <span></span>
-                                @elseif($sortAsc)
-                                    <svg class="ml-2 w-3" fill="none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-                                    </svg>
-                                @else
-                                    <svg class="ml-2 w-3" fill="none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                @endif
+                                <x-sort-icon
+                                    field="name"
+                                    :sortField="$sortField"
+                                    :sortAsc="$sortAsc"
+                                />
                             </div>
                         </th>
                         <th
@@ -61,17 +55,11 @@
                                         class="bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase
                                     tracking-wider">Email
                                 </button>
-                                @if ($sortField !== 'email')
-                                    <span></span>
-                                @elseif($sortAsc)
-                                    <svg class="ml-2 w-3" fill="none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-                                    </svg>
-                                @else
-                                    <svg class="ml-2 w-3" fill="none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                @endif
+                                <x-sort-icon
+                                    field="email"
+                                    :sortField="$sortField"
+                                    :sortAsc="$sortAsc"
+                                />
                             </div>
                         </th>
                         <th
