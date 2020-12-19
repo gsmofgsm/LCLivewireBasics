@@ -19,7 +19,7 @@
                 </div>
                 <div class="relative flex items-start">
                     <div class="flex items-center h-5">
-                        <input id="active" type="checkbox"
+                        <input wire:model="active" id="active" type="checkbox"
                                class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                     </div>
                     <div class="ml-3 text-sm leading-5">
