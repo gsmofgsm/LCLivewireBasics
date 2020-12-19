@@ -3,10 +3,18 @@ module.exports = {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: [],
+  purge: [
+      './resources/**/*.blade.php',
+      './resources/**/*.js',
+      './resources/**/*.vue',
+  ],
   theme: {
     extend: {},
   },
-  variants: {},
-  plugins: [],
+  variants: {
+      opacity: ['responsive', 'hover', 'focus', 'disabled'],
+  },
+  plugins: [
+      require('@tailwindcss/ui'),
+  ],
 }
