@@ -1,3 +1,5 @@
 <div>
-    {{-- Stop trying to control. --}}
+    <span>2</span>
+    <button>-</button>
+    <button>+</button>
 </div>
