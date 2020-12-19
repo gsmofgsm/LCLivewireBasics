@@ -16,12 +16,12 @@ class ContactForm extends Component
 
     public function submitForm()
     {
-//        $contact = $request->validate([
-//            'name' => 'required',
-//            'email' => 'required|email',
-//            'phone' => 'required',
-//            'message' => 'required',
-//        ]);
+        $contact = $this->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'message' => 'required',
+        ]);
 
         $contact['name'] = $this->name;
         $contact['email'] = $this->email;
