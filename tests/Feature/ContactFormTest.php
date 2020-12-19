@@ -38,4 +38,26 @@ class ContactFormTest extends TestCase
                 $mail->subject === 'Contact Form Submission';
         });
     }
+
+    /** @test */
+    public function contact_form_name_field_is_required()
+    {
+        Mail::fake();
+        Livewire::test(ContactForm::class)
+            ->set('email', 'someone@test.nl')
+            ->set('phone', '0612345678')
+            ->set('message', 'qing said')
+            ->call('submitForm')
+            ->assertHasErrors('name', 'required');
+    }
+
+    /** @test */
+    public function contact_form_message_field_has_minimum_characters()
+    {
+        Mail::fake();
+        Livewire::test(ContactForm::class)
+            ->set('message', '123')
+            ->call('submitForm')
+            ->assertHasErrors('message', 'min');
+    }
 }
