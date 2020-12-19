@@ -94,7 +94,7 @@
                     <div>
                         <label for="name" class="sr-only">Full name</label>
                         <div class="relative rounded-md shadow-sm">
-                            <input wire:model.lazy="name" id="name" name="name" value="{{ old('name') }}"
+                            <input wire:model.defer="name" id="name" name="name" value="{{ old('name') }}"
                                    class="@error('name')border border-red-500 @enderror form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
                                    placeholder="Full name">
                         </div>
@@ -106,7 +106,7 @@
                     <div>
                         <label for="email" class="sr-only">Email</label>
                         <div class="relative rounded-md shadow-sm">
-                            <input wire:model.lazy="email" id="email" type="text" name="email" value="{{ old('email') }}"
+                            <input wire:model.defer="email" id="email" type="text" name="email" value="{{ old('email') }}"
                                    class="@error('email')border border-red-500 @enderror form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
                                    placeholder="Email">
                         </div>
@@ -117,7 +117,7 @@
                     <div>
                         <label for="phone" class="sr-only">Phone</label>
                         <div class="relative rounded-md shadow-sm">
-                            <input wire:model.lazy="phone" id="phone" name="phone" value="{{ old('phone') }}"
+                            <input wire:model.defer="phone" id="phone" name="phone" value="{{ old('phone') }}"
                                    class="@error('phone')border border-red-500 @enderror form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
                                    placeholder="Phone">
                         </div>
@@ -128,7 +128,7 @@
                     <div>
                         <label for="message" class="sr-only">Message</label>
                         <div class="relative rounded-md shadow-sm">
-                            <textarea wire:model.lazy="message" id="message" rows="4" name="message"
+                            <textarea wire:model.defer="message" id="message" rows="4" name="message"
                                       class="@error('message')border border-red-500 @enderror form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
                                       placeholder="Message">{{ old('message') }}</textarea>
                         </div>
