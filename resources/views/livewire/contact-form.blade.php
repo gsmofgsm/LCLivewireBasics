@@ -76,6 +76,7 @@
                                 <div class="ml-auto pl-3">
                                     <div class="-mx-1.5 -my-1.5">
                                         <button
+                                            wire:click="$set('successMessage', null)"
                                             type="button"
                                             class="inline-flex rounded-md p-1.5 text-green-500 hover:bg-green-100 focus:outline-none focus:bg-green-100 transition ease-in-out duration-150"
                                             aria-label="Dismiss">
