@@ -14,6 +14,7 @@ class DataTables extends Component
     public $search;
     public $sortField;
     public $sortAsc = true;
+    protected $queryString = ['search', 'active', 'sortField', 'sortAsc'];
 
     public function updatingSearch()
     {
