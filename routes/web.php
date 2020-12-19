@@ -22,8 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/examples', function () {
-    $users = User::paginate(10);
-    return view('examples', compact('users'));
+    return view('examples');
 });
 
 Route::post('/contact', function (Request $request) {
