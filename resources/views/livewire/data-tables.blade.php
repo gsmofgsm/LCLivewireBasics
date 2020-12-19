@@ -72,7 +72,7 @@
                     <tbody class="bg-white divide-y divide-gray-200">
                     @foreach ($users as $user)
                         <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap">
+                            <td class="w-4/12 px-6 py-4 whitespace-no-wrap">
                                 <div class="flex items-center">
                                     <div class="flex-shrink-0 h-10 w-10">
                                         <img class="h-10 w-10 rounded-full"
@@ -85,7 +85,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="px-6 py-4 whitespace-no-wrap">
+                            <td class="w-4/12 px-6 py-4 whitespace-no-wrap">
                                 <div class="text-sm leading-5 text-gray-900">{{ $user->email }}</div>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap">
