@@ -8,10 +8,15 @@ use Livewire\WithPagination;
 
 class DataTables extends Component
 {
-    use withPagination;
+    use WithPagination;
 
     public $active = true;
     public $search;
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 
     public function render()
     {
