@@ -4,7 +4,7 @@
     <div>
         <div>
             <div>
-                <a href="/" class="text-blue-600">Back to main page</a>
+                <a href="/examples" class="text-blue-600">Back to examples page</a>
                 <h3 class="text-lg leading-6 font-medium text-gray-900 mt-2">
                     Edit Post
                 </h3>
