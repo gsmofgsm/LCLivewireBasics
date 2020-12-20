@@ -88,6 +88,10 @@
                     <div
                         class="mt-2 sm:mt-0 sm:col-span-2"
                         x-data="{ isUploading: false, progress: 0 }"
+                        x-on:livewire-upload-start="isUploading = true"
+                        x-on:livewire-upload-finish="isUploading = false"
+                        x-on:livewire-upload-error="isUploading = false"
+                        x-on:livewire-upload-progress="progress = $event.detail.progress"
                     >
                         <input wire:model="photo" type="file" name="photo">
                         @error('photo')
