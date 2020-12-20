@@ -1,3 +1,3 @@
-<div wire:poll.1s>
-    Current time: {{ now() }}
+<div wire:poll.1s="getRevenue">
+    Revenue: ${{ $revenue }}
 </div>
