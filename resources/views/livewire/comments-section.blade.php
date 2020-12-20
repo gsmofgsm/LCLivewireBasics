@@ -31,7 +31,7 @@
         </div>
     @endif
 
-    <form wire:submit.prevent="postComment" action="{{ route('comment.store', $post) }}" method="POST" class="w-1/2 my-12">
+    <form wire:submit.prevent="postComment" action="#" method="POST" class="w-1/2 my-12">
         @csrf
         <div class="flex">
             <img class="h-10 w-10 rounded-full" src="https://www.gravatar.com/avatar/?d=mp&f=y" alt="avatar">

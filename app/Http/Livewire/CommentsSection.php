@@ -10,19 +10,21 @@ class CommentsSection extends Component
 {
     public $post;
 
-    // this is not necessary
+    // this is not necessary for browser to show
     // as long as the name $post is the same as :post
     // livewire will know to initiate it for you
-//    public function mount(Post $post)
-//    {
-//        $this->post = $post;
-//    }
+    // however, this is needed for tests
+    public function mount(Post $post)
+    {
+        $this->post = $post;
+    }
 
     public $comment;
 
     public $successMessage;
 
     protected $rules = [
+        'post' => 'required',
         'comment' => 'required|min:4'
     ];
 
