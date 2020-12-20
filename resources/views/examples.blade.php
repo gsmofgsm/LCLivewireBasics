@@ -134,22 +134,7 @@
         <h2 class="text-lg font-semibold mt-4">Event Example with Tags</h2>
 
         <div class="mt-4">
-            <div
-                class="w-1/2 border px-4 py-2"
-                x-data
-                x-init="
-                    new Taggle($el, {
-                        tags: ['these', 'are', 'prefilled', 'tags'],
-                        onTagAdd: function(e, tag) {
-                            console.log('You just added ' + tag + '');
-                        },
-                        onTagRemove: function(e, tag) {
-                            console.log('You just removed ' + tag + '');
-                        }
-                    })
-                "
-            >
-            </div>
+            <livewire:tags-component />
         </div>
 
         <div class="h-96"></div>
