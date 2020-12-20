@@ -9,11 +9,14 @@ class CommentsSection extends Component
 {
     public $post;
 
-    public function mount(Post $post)
-    {
-        $this->post = $post;
-    }
-    
+    // this is not necessary
+    // as long as the name $post is the same as :post
+    // livewire will know to initiate it for you
+//    public function mount(Post $post)
+//    {
+//        $this->post = $post;
+//    }
+
     public function render()
     {
         return view('livewire.comments-section');
