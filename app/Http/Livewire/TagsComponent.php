@@ -28,6 +28,7 @@ class TagsComponent extends Component
     public function tagAdded($tag)
     {
         Tag::create(['name' => $tag]);
+        $this->emit('tagAddedFromBackend', $tag);
     }
 
     public function tagRemoved($tag)

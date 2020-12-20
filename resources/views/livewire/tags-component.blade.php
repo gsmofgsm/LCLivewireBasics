@@ -12,6 +12,9 @@
                             livewire.emit('tagRemoved', tag);
                         }
                     })
+                    livewire.on('tagAddedFromBackend', tag => {
+                        alert(tag);
+                    })
                 "
 >
 </div>
