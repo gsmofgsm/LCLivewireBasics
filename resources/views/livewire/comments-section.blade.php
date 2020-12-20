@@ -36,7 +36,7 @@
         <div class="flex">
             <img class="h-10 w-10 rounded-full" src="https://www.gravatar.com/avatar/?d=mp&f=y" alt="avatar">
             <div class="ml-4 flex-1">
-                <textarea wire:model="comment" name="comment" id="comment" rows="4" placeholder="Type your comment here..."
+                <textarea wire:model.defer="comment" name="comment" id="comment" rows="4" placeholder="Type your comment here..."
                           class="border rounded-md shadow w-full px-4 py-2"></textarea>
 
                 @error('comment')
@@ -45,7 +45,7 @@
 
                 <button type="submit"
                         class="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150 mt-2 disabled:opacity-50">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                    <svg wire:loading wire:target="postComment" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor"
