@@ -89,7 +89,7 @@
                         class="mt-2 sm:mt-0 sm:col-span-2"
                         x-data="{ isUploading: false, progress: 0 }"
                     >
-                        <input type="file" name="photo">
+                        <input wire:model="photo" type="file" name="photo">
                         @error('photo')
                         <p class="text-red-500 mt-1">{{ $message }}</p>
                     @enderror
