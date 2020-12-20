@@ -111,7 +111,9 @@
                         </div>
 
                         <div class="mt-4">
-                            @if ($post->photo)
+                            @if ($photo)
+                                <img src="{{ $photo->temporaryUrl() }}" alt="temp">
+                            @elseif ($post->photo)
                                 <img src="{{ Storage::url($post->photo) }}" alt="cover image">
                             @endif
                         </div>
