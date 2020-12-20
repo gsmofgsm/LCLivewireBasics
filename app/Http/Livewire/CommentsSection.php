@@ -34,6 +34,10 @@ class CommentsSection extends Component
             'content' => $this->comment,
         ]);
 
+        $this->comment = '';
+
+        $this->post = Post::find($this->post->id);
+
         session()->flash('success_message', 'Comment was posted!');
     }
 
