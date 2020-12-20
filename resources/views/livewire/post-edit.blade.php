@@ -1,4 +1,4 @@
-<form action="{{ route('post.update', $post) }}" method="POST" enctype="multipart/form-data">
+<form wire:submit.prevent="submitForm" action="#" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PATCH')
     <div>
@@ -52,7 +52,7 @@
                     </label>
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
                         <div class="max-w-lg rounded-md shadow-sm sm:max-w-xs">
-                            <input id="title" name="title"
+                            <input wire:model="title" id="title" name="title"
                                    class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                                    value="{{ $post->title }}">
                             @error('title')
@@ -70,7 +70,7 @@
                     </label>
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
                         <div class="max-w-lg flex rounded-md shadow-sm">
-                                    <textarea id="content" name="content" rows="5"
+                                    <textarea wire:model="content" id="content" name="content" rows="5"
                                               class="form-textarea block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5">{{ $post->content }}</textarea>
                         </div>
                         @error('content')
