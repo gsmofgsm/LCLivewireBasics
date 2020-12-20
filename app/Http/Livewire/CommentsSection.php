@@ -20,6 +20,8 @@ class CommentsSection extends Component
 
     public $comment;
 
+    public $successMessage;
+
     protected $rules = [
         'comment' => 'required|min:4'
     ];
@@ -38,7 +40,7 @@ class CommentsSection extends Component
 
         $this->post = Post::find($this->post->id);
 
-        session()->flash('success_message', 'Comment was posted!');
+        $this->successMessage = 'Comment was posted!';
     }
 
     public function render()

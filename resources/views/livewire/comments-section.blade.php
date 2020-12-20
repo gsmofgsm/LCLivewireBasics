@@ -1,5 +1,5 @@
 <div class="my-8 space-y-10">
-    @if (session('success_message'))
+    @if ($successMessage)
         <div class="rounded-md bg-green-50 p-4 my-8">
             <div class="flex">
                 <div class="flex-shrink-0">
@@ -11,12 +11,12 @@
                 </div>
                 <div class="ml-3">
                     <p class="text-sm leading-5 font-medium text-green-800">
-                        {{ session('success_message') }}
+                        {{ $successMessage }}
                     </p>
                 </div>
                 <div class="ml-auto pl-3">
                     <div class="-mx-1.5 -my-1.5">
-                        <button type="button"
+                        <button wire:click="$set('successMessage', false)" type="button"
                                 class="inline-flex rounded-md p-1.5 text-green-500 hover:bg-green-100 focus:outline-none focus:bg-green-100 transition ease-in-out duration-150"
                                 aria-label="Dismiss">
                             <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
