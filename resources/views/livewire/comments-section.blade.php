@@ -31,12 +31,12 @@
         </div>
     @endif
 
-    <form action="{{ route('comment.store', $post) }}" method="POST" class="w-1/2 my-12">
+    <form wire:submit.prevent="postComment" action="{{ route('comment.store', $post) }}" method="POST" class="w-1/2 my-12">
         @csrf
         <div class="flex">
             <img class="h-10 w-10 rounded-full" src="https://www.gravatar.com/avatar/?d=mp&f=y" alt="avatar">
             <div class="ml-4 flex-1">
-                <textarea name="comment" id="comment" rows="4" placeholder="Type your comment here..."
+                <textarea wire:model="comment" name="comment" id="comment" rows="4" placeholder="Type your comment here..."
                           class="border rounded-md shadow w-full px-4 py-2"></textarea>
 
                 @error('comment')

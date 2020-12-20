@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Comment;
 use App\Models\Post;
 use Livewire\Component;
 
@@ -16,6 +17,25 @@ class CommentsSection extends Component
 //    {
 //        $this->post = $post;
 //    }
+
+    public $comment;
+
+    protected $rules = [
+        'comment' => 'required|min:4'
+    ];
+
+    public function postComment()
+    {
+        $this->validate();
+
+        Comment::create([
+            'post_id' => $this->post->id,
+            'username' => 'Guest',
+            'content' => $this->comment,
+        ]);
+
+        session()->flash('success_message', 'Comment was posted!');
+    }
 
     public function render()
     {
