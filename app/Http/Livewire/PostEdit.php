@@ -15,6 +15,7 @@ class PostEdit extends Component
     public $content;
     public $photo;
     public $tempUrl;
+    public $successMessage;
 
     protected $rules = [
         'title' => 'required',
@@ -52,7 +53,7 @@ class PostEdit extends Component
             'photo' => $this->photo ? $this->photo->store('photos', 'public') : $imageToShow,
         ]);
 
-        session()->flash('success_message', 'Post was updated successfully!');
+        $this->successMessage = 'Post was updated successfully!';
     }
 
     public function render()
