@@ -11,12 +11,12 @@ class PollExample extends Component
 
     public function mount()
     {
-        $this->revenue = $this->getRevenue();
+        $this->getRevenue();
     }
 
     public function getRevenue()
     {
-        return $this->revenue = DB::table('orders')->sum('price');
+        $this->revenue = DB::table('orders')->sum('price');
     }
 
     public function render()
