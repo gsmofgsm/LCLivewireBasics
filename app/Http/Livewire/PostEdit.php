@@ -14,6 +14,7 @@ class PostEdit extends Component
     public $title;
     public $content;
     public $photo;
+    public $tempUrl;
 
     protected $rules = [
         'title' => 'required',
@@ -30,6 +31,12 @@ class PostEdit extends Component
 
     public function updatedPhoto()
     {
+        try {
+            $this->tempUrl = $this->photo->temporaryUrl();
+        } catch (\Exception $e) {
+            $this->tempUrl = ''; // placeholder image
+        }
+
         $this->validate();
     }
 
