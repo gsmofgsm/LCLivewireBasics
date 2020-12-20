@@ -12,6 +12,6 @@
 
         <hr>
 
-        <livewire:comments-section />
+        <livewire:comments-section :post="$post" />
     </div>
 @endsection
